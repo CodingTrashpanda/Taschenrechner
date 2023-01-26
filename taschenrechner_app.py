@@ -1,24 +1,24 @@
 def add (a, b):
     answer = a + b
-    print(str(a) + " + " + str(b) + " = " + str(answer))
+    print(str(a) + " + " + str(b) + " = " + str(answer) + "\n")
     with open("result.txt", "a") as f:
         f.write(f"{a} + {b} = {answer}\n")
 
 def sub(a, b):
     answer = a - b
-    print(str(a) + " - " + str(b) + " = " + str(answer))
+    print(str(a) + " - " + str(b) + " = " + str(answer) + "\n")
     with open("result.txt", "a") as f:
         f.write(f"{a} - {b} = {answer}\n")
     
 def mul(a, b):
     answer = a * b
-    print(str(a) + " * " + str(b) + " = " + str(answer))
+    print(str(a) + " * " + str(b) + " = " + str(answer) + "\n")
     with open("result.txt", "a") as f:
         f.write(f"{a} * {b} = {answer}\n")
     
 def div(a, b):
     answer = a / b
-    print(str(a) + " / " + str(b) + " = " + str(answer))
+    print(str(a) + " / " + str(b) + " = " + str(answer) + "\n")
     with open("result.txt", "a") as f:
         f.write(f"{a} / {b} = {answer}\n")
     
