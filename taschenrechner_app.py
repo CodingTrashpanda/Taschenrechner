@@ -1,5 +1,6 @@
 import tkinter as tk
 
+
 calculation = ""
 
 def add_to_calculation(symbol):
@@ -28,7 +29,10 @@ def clear_field():
     
 
 root = tk.Tk()
+root.title("Taschenrechner")
 root.geometry("300x275")
+icon = tk.PhotoImage(file="logo.png")
+root.iconphoto(True, icon)
 
 text_result = tk.Text(root, height=2, width=16, font=("Arial", 24))
 text_result.grid(columnspan=5)
