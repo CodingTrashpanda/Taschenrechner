@@ -14,7 +14,9 @@ def evaluate_calculation():
         result = str(eval(calculation))
         calculation = ""
         text_result.delete(1.0, "end")
-        text_result.insert(1.0, result)      
+        text_result.insert(1.0, result)
+        with open("results.txt", "a") as file:
+            file.write(result + "\n")    
     except:
         clear_field()
         text_result.insert(1.0, "Error")
