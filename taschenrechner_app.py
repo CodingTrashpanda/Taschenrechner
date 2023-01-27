@@ -1,5 +1,6 @@
 import tkinter as tk
 
+
 calculation = ""
 
 def add_to_calculation(symbol):
@@ -14,7 +15,9 @@ def evaluate_calculation():
         result = str(eval(calculation))
         calculation = ""
         text_result.delete(1.0, "end")
-        text_result.insert(1.0, result)      
+        text_result.insert(1.0, result)
+        with open("results.txt", "a") as file:
+            file.write(result + "\n")    
     except:
         clear_field()
         text_result.insert(1.0, "Error")
@@ -26,7 +29,10 @@ def clear_field():
     
 
 root = tk.Tk()
+root.title("Taschenrechner")
 root.geometry("300x275")
+icon = tk.PhotoImage(file="logo.png")
+root.iconphoto(True, icon)
 
 text_result = tk.Text(root, height=2, width=16, font=("Arial", 24))
 text_result.grid(columnspan=5)
