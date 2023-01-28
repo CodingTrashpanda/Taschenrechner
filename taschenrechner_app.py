@@ -13,7 +13,8 @@ def evaluate_calculation():
     global calculation
     original_calculation = calculation
     try:
-        result = str(eval(calculation))
+        result = eval(calculation)
+        result = "{:,}".format(result)
         calculation = ""
         text_result.delete(1.0, "end")
         text_result.insert(1.0, result)
