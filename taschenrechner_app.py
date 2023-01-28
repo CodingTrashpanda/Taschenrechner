@@ -11,16 +11,18 @@ def add_to_calculation(symbol):
 
 def evaluate_calculation():
     global calculation
+    original_calculation = calculation
     try:
         result = str(eval(calculation))
         calculation = ""
         text_result.delete(1.0, "end")
         text_result.insert(1.0, result)
         with open("results.txt", "a") as file:
-            file.write(result + "\n")    
+            file.write(original_calculation + "=" + result + "\n")    
     except:
         clear_field()
         text_result.insert(1.0, "Error")
+
 
 def clear_field():
     global calculation
