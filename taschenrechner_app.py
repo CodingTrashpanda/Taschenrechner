@@ -1,4 +1,5 @@
 import tkinter as tk
+import locale
 
 LARGE_FONT_STYLE = ("Arial", 40, "bold")
 SMALL_FONT_STYLE = ("Arial", 16)
@@ -133,8 +134,8 @@ class Calculator:
         self.total_expression += self.current_expression
         self.update_total_label()
         try:
-            self.current_expression = str(eval(self.total_expression))
-
+            locale.setlocale(locale.LC_ALL, 'de_DE.UTF-8')
+            self.current_expression = locale.format("%.2f", eval(self.total_expression), grouping=True)
             self.total_expression = ""
         except Exception as e:
             self.current_expression = "Error"
